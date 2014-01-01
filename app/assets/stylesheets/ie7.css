@@ -1,0 +1,107 @@
+
+/*-------------------------------------------------------------------------
+  Position "search" CSS
+-------------------------------------------------------------------------*/
+
+.top .content .search {
+  position: relative;
+  z-index: 99;
+}
+.top .content .search .input {
+  float: left;
+  margin-left: 60px !important;
+}
+.top .content .search .input input[type=text] {
+  float: left;
+}
+.search_ads {
+  float: left;
+  margin: 10px 0 0 0;
+  z-index: 99;
+}
+
+.change_location_link {
+  padding-right: 20px;
+}
+
+/*-------------------------------------------------------------------------
+  Top Menu CSS
+-------------------------------------------------------------------------*/
+
+.top .content .menu ul li {
+  float: left;
+}
+
+/*-------------------------------------------------------------------------
+  Footer Menu CSS
+-------------------------------------------------------------------------*/
+
+ul.footer_menu li {
+  float: left;
+}
+
+/*-------------------------------------------------------------------------
+  Featured Ads Scroll Box CSS
+-------------------------------------------------------------------------*/
+
+.scroll_box .content .ad {
+  float: left;
+}
+
+
+/*-------------------------------------------------------------------------
+  Box 1 CSS
+-------------------------------------------------------------------------*/
+
+.top .content .box1_middle .th {
+  float: left;
+  margin: 0 1px;
+}
+.top .content .box1_middle .left_button {
+  float: left;
+}
+.top .content .box1_middle .view_larger_image {
+  float: left;
+}
+.top .content .box1_middle .right_button {
+  float: left;
+}
+
+/*-------------------------------------------------------------------------
+  Icon Box CSS
+-------------------------------------------------------------------------*/
+
+.icon_box {
+  width: 310px;
+  z-index: 99;
+}
+.ie7title {
+  float: left;
+  margin-top: -50px;
+}
+.icon_box div {
+  width: 25px;
+  height: 20px;
+  margin-left: 8px;
+}
+.icon_box a {
+  margin-top: 3px;
+}
+.icon_box a,
+.icon_box div {
+  float: left;
+}
+.report_ad {
+  float: left;
+}
+
+
+
+
+
+
+
+
+
+
+

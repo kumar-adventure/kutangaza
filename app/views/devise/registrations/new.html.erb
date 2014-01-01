@@ -1,18 +1,50 @@
-<h2>Sign up</h2>
+<div class="padding" style="padding-left:45px;font-size:small;">
+  <span style="font-weight:bold;">Registration</span>
+  <br/>
+  <br/>
+  Registration is optional, but registration does allow you to:
+  <br/>
+  <ul style="list-style-type:disc;list-style-position:inside;">
+  	<li>Post and manage Ads without having to confirm each action via email</li>
+  	<li>Reserve your own nickname</li>
+  	<li>Participate in discussions</li>
+  </ul>
+  <br/>
+  
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>	
+    <%= devise_error_messages! %>
+    <div class="gray_box" style="left:150px;width:860px;">
+    	To start registration please enter your email address below.
+    	<br/>
+    	<span style="font-weight:bold;">Email address</span> <span style="color:red;"id="email_message"></span>
+    	<br/> 
+    	<%= f.email_field :email, :autofocus => true, class: "set-password-width" %>
+    	<br/>
+    	<span style="font-weight:bold;">Password(at least 8 characters)</span> <span style="color:red;"id="password1_message"></span>
+    	<br/>
+    	<%= f.password_field :password, class: "set-password-width" %> 
+    	<br/>
+    	<span style="font-weight:bold;">Re-type password</span> <span style="color:red;"id="password2_message"></span>
+    	<br/>
+    	<%= f.password_field :password_confirmation, class: "set-password-width" %> 
+    	<br/>
+    	<span style="font-weight:bold;">Nickname</span>
+    	<br/>
+    	<%= f.text_field :name, class: "set-password-width" %> 
+    	<span style="color:red;"id="nickname_message"></span>
+    	<br/>
+    	<input type="checkbox" name="event_contact" id="event_contact"> Yes, I would like Kutangaza to contact me about events,
+    	new features, and other promotional information.
+    	<br/>
+    	<input type="checkbox" name="terms_agreement" id="terms_agreement"> By clicking "Register", you are agreeing to our 
+    	<a href=# style="color:#0066CC;text-decoration:underline;">terms of use</a> and 
+    	<a href=# style="color:#0066CC;text-decoration:underline;">privacy policy</a>.
+    	<br/>
+    	<br/>
+    	<%= f.submit "Register", style: "color:black;background-color:#CDC953;border:thin blue solid;padding:2px 15px 2px 15px;" %>
+    	<br/>
+      <%#= render "devise/shared/links" %>
+    </div>
+  <% end %>
+</div>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div>
-<% end %>
-
-<%= render "devise/shared/links" %>

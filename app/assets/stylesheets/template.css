@@ -1,0 +1,273 @@
+﻿
+
+body {
+  text-align: center;
+  font-family: arial;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+/*-------------------------------------------------------------------------
+  Layout CSS
+-------------------------------------------------------------------------*/
+
+.container {
+  width: 1210px;
+  margin: 0 auto;
+  background: url('/assets/body.bg.jpg') center top repeat-y;
+}
+.top {
+  min-height: 480px;
+  background: url('/assets/top.bg.jpg') center top no-repeat;
+  position: relative;
+  z-index: 2;
+}
+#page2 .top {
+  background: url('/assets/top2.bg.jpg') center top no-repeat;
+}
+#page3 .top {
+  background: url('/assets/top2.bg.jpg') center top no-repeat;
+}
+.top .content {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+  overflow: auto;
+}
+.top .content .padding {
+  padding: 10px 20px;
+}
+.bottom {
+  min-height: 313px;
+  //margin-top: -100px;
+  background: url('/assets/bottom.bg.jpg') center bottom no-repeat;
+  position: relative;
+  z-index: 1;
+}
+#page3 .bottom,
+#page2 .bottom {
+  margin-top: -50px;
+}
+.bottom .content {
+  width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+  text-align: left;
+}
+.bottom .content .padding {
+  padding: 10px 20px;
+}
+
+/*-------------------------------------------------------------------------
+  Positions CSS
+-------------------------------------------------------------------------*/
+
+.top .content .signin_reg {
+  width: 210px;
+  height: 58px;
+  text-align: center;
+  background: url('/assets/signup.png') left top no-repeat;
+  position: absolute;
+  top: 55px;
+  right: 105px;
+}
+.top .content .signin_reg .padding {
+  padding: 4px 20px 4px 30px;
+}
+.top .content .menu {
+  width: 635px;
+  height: 45px;
+  text-align: right;
+  position: absolute;
+  top: 120px;
+  right: 105px;
+}
+.top .content .menu .padding {
+  padding: 10px 4px;
+}
+.top .content .search {
+  width: 1000px;
+  height: 45px;
+  text-align: left;
+  position: absolute;
+  top: 181px;
+  left: 105px;
+}
+.top .content .search .padding {
+  padding: 10px 4px;
+}
+.top .content .change_location {
+  width: 300px;
+  height: 45px;
+  text-align: right;
+  position: absolute;
+  top: 193px;
+  right: 122px;
+}
+.top .content .change_location .padding {
+  padding: 10px 4px;
+}
+.bottom .copyright {
+  color: #FFF;
+  margin-top: 85px;
+  font-size: 11px;
+}
+
+/*-------------------------------------------------------------------------
+  Content Layout CSS
+-------------------------------------------------------------------------*/
+
+.top .content .left_column {
+  float: left;
+  width: 650px;
+}
+.top .content .right_column {
+  float: left;
+  width: 240px;
+}
+
+.top .content .gray_box {
+  width: 320px;
+  border:1px #CCCCCC solid;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  padding-left:45px;
+  padding-top:15px;
+  padding-bottom:25px;
+  font-size:small;
+  position:absolute;
+  left:400px;
+}
+
+.top .content .big_gray_box {
+  width: 920px;
+  border:1px #CCCCCC solid;
+  border-radius:10px;
+  -moz-border-radius:10px;
+  padding-left:25px;
+  padding-top:15px;
+  padding-bottom:15px;
+  font-size:small;
+  position:absolute;
+  left:120px;
+}
+
+
+#page2 .top .content .left_column {
+  float: left;
+  width: 260px;
+}
+#page2 .top .content .right_column {
+  float: left;
+  width: 700px;
+}
+
+.left_menu  {
+  margin-top: -16px;
+  margin-left: -10px;
+}
+.left_menu .menu_top {
+  width: 100%;
+  height: 20px;
+  background: url('/assets/left.bg.top.png') 0 0 no-repeat;
+  overflow: visible;
+}
+.left_menu .menu_middle {
+  width: 100%;
+  background: url('/assets/left.bg.middle.png') 0 0 repeat-y;
+}
+.left_menu .menu_middle .padding {
+  padding: 0 19px 0 10px;
+}
+.left_menu .menu_bottom {
+  width: 100%;
+  height: 20px;
+  background: url('/assets/left.bg.bottom.png') 0 100% no-repeat;
+}
+
+.left_menu_title {
+  display: block;
+  color: #353891;
+  float: left;
+  width: 221px;
+  margin: 10px 10px 0 10px;
+  padding: 7px 10px 5px 10px;
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #dee39a;
+  position: relative;
+  z-index: 10;
+}
+
+.no_underline_link:hover
+{
+	text-decoration:none;
+}
+
+.ad_details_header
+{
+	padding:8px 0px 8px 8px;
+	font-weight:bold;
+	background:#D0CB89;
+	width:96.5%;
+	border-radius:3px;
+	-moz-border-radius:3px;
+}
+
+.button
+{
+	background-color:#B7BF1C;
+	padding:5px 10px 5px 10px;
+	border-radius:5px;
+	-moz-border-radius:5px;
+	font-weight:bold;
+	color:black;
+	border-color:#9AA23D;
+}
+
+#adDetails
+{
+	width:100%;
+}
+
+#adDetails tr
+{
+	border-bottom:10px transparent solid;
+}
+
+#adDetails th
+{
+	font-weight:bold;
+	vertical-align:top;
+}
+
+#adDetails td
+{
+	padding-right:20px;
+	vertical-align:top;
+}
+
+#urgentLabel
+{
+	background-color:red;
+	color:white;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	padding:1px 2px 1px 2px;
+}
+
+.grayInfo
+{
+	color:gray;
+}
+
+.profileThumbNail
+{
+	width:75px;
+	height:75px;
+}
+
+.profileItem
+{
+	background-image:url('/assets/profile.png');
+}
