@@ -86,7 +86,7 @@ body {
   padding: 10px 4px;
 }
 .top .content .search {
-  width: 1000px;
+  //width: 1000px;
   height: 45px;
   text-align: left;
   position: absolute;
@@ -270,4 +270,10 @@ body {
 .profileItem
 {
 	background-image:url('/assets/profile.png');
+}
+.home_page_height{
+  min-height:1550px;
+}
+.login_page_height, .sign_up_page_height{
+  min-height: 680px;
 }
