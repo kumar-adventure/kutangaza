@@ -1,5 +1,12 @@
 Kutangaza::Application.routes.draw do
   
+
+  resources :categories do
+    resources :subcategory
+  end
+  get 'post_advertisement', to: 'categories#post_advertisement', as: 'post_advertisement'
+  get 'advertisement_detail', to: 'categories#advertisement_detail', as: 'advertisement_detail'
+  
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

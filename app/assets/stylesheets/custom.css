@@ -4,3 +4,7 @@
 .set-password-width{
   width: 400px;
 }
+.signin_reg a{
+	text-decoration: none;
+	color: #353891 !important;
+}

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/assets/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/template.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  <!--[if IE 7]>
+  <link href="css/ie7.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  
+</head>
+<body>
+  <div class="container">
+    <div class="top" style="min-height:1550px;">
+      <div class="content">
+        <div class="signin_reg">
+          <div class="padding">
+            <a class="signin" href="#">Sign in</a> <a href="#">Register</a>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="padding">
+            <ul>
+              <li class="active"><a href="#"><span><%= link_to "Browse Ads", root_url %></span></a></li><li><a href="#"><span>Post Ad</span></a></li><li><a href="#"><span>My Profile</span></a></li><li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <div class="padding">
+            <form action="" method="post">
+              <div class="input" style="margin-left: 175px;">
+                <input type="text" name="search" value="" />
+              </div>
+              <div class="search_ads" style="display: inline;"><a href="#">Search Ads</a><div class="dropdown"><a href="#">All Ads</a><br /><a href="#">Buy and sell</a><br /><a href="#">Cars & Vehicles</a><br /><a href="#">Services</a><br /><a href="#">Housing</a><br /><a href="#">Community</a><br /><a href="#">Pets</a><br /><a href="#">Jobs</a><br /><a href="#">Resumes</a><br /><a href="#">Personals</a></div></div>
+            </form>
+          </div>
+        </div>
+        <div class="change_location">
+          <div class="padding">
+            <form action="" method="post">
+              <span style="color: #bf1e2e; font-weight: bold;">Edmonton and Area:</span>
+              <a class="change_location_link" href="#">Change Location</a>
+              <div class="dropdown"><a href="#">Edmonton</a><br /><a href="#">Calgary</a><br /><a href="#">etc.</a></div>
+            </form>
+          </div>
+        </div>
+        <hr style="margin-top: 243px;" >
+        <div class="padding">
+          <div class="big_gray_box">
+				 <span style="font-weight:bold;font-size:larger;">Please enter Ad details:</span> This ad will cost you nothing to create. The Kutangaza service is 
+				 <span style="font-weight:bold;">FREE</span> to use
+          </div>
+          <div class="big_gray_box" style="top:320px;">
+          	<div class="ad_details_header">Ad Details</div>
+          	<br >
+          	This ad will be posted in the <span style="font-weight:bold">Accessories</span> category 
+          	<a href="postAdCategory.html">Change category</a>
+          	<br >
+          	<span id="messages"></span>
+          	<br >
+          	<table id="adDetails">
+          		<tr>
+          			<th></th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>= Required</td>
+          		</tr>
+          		<tr>
+          			<td colspan="3">
+          				<hr style="width:80%">
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Ad Type</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<input type="radio" name="adType" checked="checked" value="offer" > I am offering&nbsp;
+          				<span class="grayInfo">- You are offering an item for sale.</span>
+          				<br >
+          				<input type="radio" name="adType" value="want"> I want&nbsp;
+          				<span class="grayInfo">- You want to buy an item.</span>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Price</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<input type="radio" name="priceType" checked="checked" value="amount"> $&nbsp;
+          				<input type="text" name="price" >
+          				<br >
+          				<input type="radio" name="priceType" value="free"> Free
+          				<br >
+          				<input type="radio" name="priceType" value="contact"> Please contact
+          				<br >
+          				<input type="radio" name="priceType" value="swap"> Swap / Trade
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Title</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<input type="text" name="title" style="width:500px;">
+          				<br >
+          				<input type="checkbox" name="urgent" > 
+          				<span id="urgentLabel">URGENT</span> 7 days - $7.99
+          				<br >
+          				<span class="grayInfo">Let buyers know you want to sell quickly
+          				(<a href="#">Learn more</a>)
+          				</span>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Description</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<textarea name="description" style="width:500px;height:200px;"></textarea>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Website URL</th>
+          			<td></td>
+          			<td>
+          				<input type="text" name="URL" style="width:500px;">
+          				<br >
+          				<span class="grayInfo">Link to your website for $4.00</span>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Images[<a href="#">?</a>]</th>
+          			<td></td>
+          			<td>
+	          			<input type="file" name="images" >
+	          			<br >
+	          			<span class="grayInfo">Get more replies by uploading pictures</span>
+	          		</td>
+          		</tr>
+          		<tr>
+          			<th>Email</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<input type="text" name="email" style="width:500px;">
+          				<br >
+          				<span class="grayInfo">Your email address will not be shared with others</span>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Phone</th>
+          			<td></td>
+          			<td>
+          				<input type="text" name="phone" >
+          				<br >
+          				<span class="grayInfo">Optional. If you enter a phone number, it will show up on your ad</span>
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Location</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<select name="location">
+          					<option value="edmonton">Edmonton</option>
+          					<option value="albert">St. Albert</option>
+          					<option value="strathcona">Strathcona County</option>
+          				</select>
+          				<br >
+          				<span class="grayInfo">
+	          				Please select your location or the one closest to you
+	          				<br >
+	          				Your ad will be posted on both the location you choose and the Edmonton Kutangaza site
+          				</span>				
+          			</td>
+          		</tr>
+          		<tr>
+          			<th>Map address</th>
+          			<td><span style="color:red;">*</span></td>
+          			<td>
+          				<input type="text" name="address" style="width:500px;">
+          				<br >
+          				<span class="grayInfo">Enter a postal code and/or street adress.</span>
+          			</td>
+          		</tr>
+          	</table>
+          </div>
+          <div class="big_gray_box" style="top:1240px;">
+       		<div class="ad_details_header">
+       			<span style="font-weight:bold">Promote my Ad</span>(Optional)
+       		</div>
+       		<br >
+       		<table id="promoteAd">
+       			<tr>
+       				<td>
+			       		<input type="checkbox" name="topAd"> Top Ad 
+			       		(<a href="#" style="font-size:smaller;">Learn more</a>)
+       				</td>
+       				<td>
+       					<select name="topAdType">
+       						<option value="3">3 days</option>
+       						<option value="7" selected="selected">7 days</option>
+       					</select>
+       				</td>
+       				<td>
+       					<span id="topAdAmount">$6.99</span>
+       				</td>
+       			</tr>
+       			<tr>
+       				<td colspan="3">
+       					<div style="background-color:#FFFF99;padding:2px 0px 2px 5px;">
+       						Sell faster by putting your Ad in the Top Ads section located above all other Ads.
+       					</div>
+       					<br >
+       				</td>
+       			</tr>
+       			<tr>
+       				<td colspan="3">
+       					<hr >
+       				</td>
+       			</tr>
+       			<tr>
+       				<td>
+			       		<input type="checkbox" name="gallery"> Gallery 
+			       		(<a href="#" style="font-size:smaller;">Learn more</a>)
+       				</td>
+       				<td>
+       					7 days
+       				</td>
+       				<td>
+       					<span id="topAdAmount">$39.99</span>
+       				</td>
+       			</tr>
+       			<tr>
+       				<td colspan="3">
+       					<div style="background-color:#FFFF99;padding:2px 0px 2px 5px;">
+       						Have your Ad be seen on the Kutangaza homepage by thousands of people every day for a week
+       					</div>
+       				</td>
+       			</tr>
+       		</table>
+          </div>
+          <div class ="big_gray_box" style="top:1440px;">
+	          By posting your ad, you're agreeing to our 
+	          <a href="#">terms of use</a>, <a href="#">privacy policy</a> and <a href="#">site policies</a>.
+	          <br >
+				 Please do not post duplicate ads. Use 'Promote My Ad' above to gain more replies.
+				 <br >
+				 <br >
+				 <br >
+				 <a href="#" style="text-decoration:none;">
+				 	<span class="button">Post Your Ad</span>
+				 </a>
+			 </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="content">
+        <div class="padding">
+          <ul class="footer_menu">
+            <li class="active"><a href="#"><span>Help</span></a></li>
+            <li><a href="#"><span>About</span></a></li>
+            <li><a href="#"><span>Privacy Policy</span></a></li>
+            <li><a href="#"><span>Terms of Use</span></a></li>
+            <li><a class="facebook_link" href="#"><span>Follow us on Facebook</span></a></li>
+            <li><a class="twitter_link" href="#"><span>Follow us on Twitter</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; 2011 Kutangaza</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

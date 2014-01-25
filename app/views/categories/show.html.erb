@@ -1,0 +1,184 @@
+<p id="notice"><%= notice %></p>
+<head>
+  <link href="/assets/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/template.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  
+</head>
+
+<%#= link_to 'Edit', edit_category_path(@category) %> |
+<%#= link_to 'Back', categories_path %>
+<body id="page2">
+  <div class="container">
+    <div class="top">
+    	<div class="content">
+        <div class="signin_reg">
+          <div class="padding">
+					  <a class="signin" href="<%= new_user_session_path %>">Sign in</a>
+					  <a href="<%= new_user_registration_path %>">Register</a>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="padding">
+            <ul>
+              <li class="active"><a href="<%= root_url %>"><span>Browse Ads</span></a></li><li><a href="#"><span>Post Ad</span></a></li><li><a href="#"><span>My Profile</span></a></li><li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <div class="padding">
+            <form action="" method="post">
+              <div class="input" style="margin-left: 175px;">
+                <input type="text" name="search" value="" />
+              </div>
+              <div class="search_ads" style="display: inline;"><a href="#">Search Ads</a><div class="dropdown"><a href="#">All Ads</a><br /><a href="#">Buy and sell</a><br /><a href="#">Cars & Vehicles</a><br /><a href="#">Services</a><br /><a href="#">Housing</a><br /><a href="#">Community</a><br /><a href="#">Pets</a><br /><a href="#">Jobs</a><br /><a href="#">Resumes</a><br /><a href="#">Personals</a></div></div>
+            </form>
+            <div style="clear: both;"></div>
+            <h2 class="page_title" style="margin: -5px 0 2px 180px;"><u>
+            	<%= link_to "Post an Advertisement", post_advertisement_path %></u> <b>-</b> <span>We Drive Your Ads!</span></h2>
+          </div>
+        </div>
+        <div class="change_location">
+          <div class="padding">
+            <form action="" method="post">
+              <span style="color: #bf1e2e; font-weight: bold;">Edmonton and Area:</span>
+              <a class="change_location_link" href="#">Change Location</a>
+              <div class="dropdown"><a href="#">Edmonton</a><br /><a href="#">Calgary</a><br /><a href="#">etc.</a></div>
+            </form>
+          </div>
+        </div>
+        <hr style="margin-top: 283px;" />
+        <div class="padding">
+          <div class="left_column">
+            <div class="left_menu">
+              <div class="menu_top">
+                <span class="left_menu_title">Current Matches (20546)</span>
+              </div>
+              <div class="menu_middle">
+                <div class="padding">
+                  <br />
+                  <br />
+                  <div class="indent">
+                    <h4>Category:</h4>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp; All Categories</a></li>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; cars & vehicles</a></li>
+                    </ul>
+                    <div class="category" style="text-align: center; margin-top: -8px;"><span>cars & trucks (20645)</span></div>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Location:</h4>
+                    <div class="category"><span>Edmonton & Area</span></div>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Edmonton (16319)</a></li>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; St. Albert (939)</a></li>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Strathcona County (1731)</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Type:</h4>
+                    <div class="category"><span>All Types</span></div>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Offering (19546)</a></li>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Wanted (739)</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Featured Ads:</h4>
+                    <div class="category"><span>All Featured Ads</span></div>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Urgent Ads</a></li>
+                      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Certified Pre-Owned</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Price:</h4>
+                    <form>
+                      &nbsp;&nbsp; from <input type="text" name="from" />
+                      &nbsp;&nbsp; to <input type="text" name="to" />
+                    </form>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Make:</h4>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp; Ford (8870)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Dodge (2654)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Chevrolet (648)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; GMC (1311)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Toyota (854)</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>For Sale By:</h4>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp; Owner (8870)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Dealer (2654)</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div class="indent">
+                    <h4>Body Type:</h4>
+                    <ul>
+                      <li><a href="#">&nbsp;&nbsp; Pickup Truck (8870)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Sedan (2654)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; SUV, Crossover (648)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; 2 door (1311)</a></li>
+                      <li><a href="#">&nbsp;&nbsp; Minivan, Van (854)</a></li>
+                    </ul>
+                  </div>
+                  <hr />
+                  <div style="height: 6px; clear: both;"></div>
+                </div>
+              </div>
+              <div class="menu_bottom">
+              </div>
+            </div>
+          </div>
+          <div class="right_column">
+            
+            <%= image_tag("top.ad.jpg")%>
+            <table class="ads_list">
+              <thead>
+                <tr>
+                  <td style="width: 19%;"><br /></td>
+                  <td style="width: 42%;"></td>
+                  <td style="width: 20%;">Price</td>
+                  <td style="width: 19%; text-align: right;">Posted</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="col1">
+                    <%= image_tag("icons/ad.logo.png")%>
+                    <%= image_tag("gray.box.jpg")%>
+                  </td>
+                  <td class="col2">
+                    <a href="<%= category_subcategory_path(1,2) %>"><b>2007 Ford Ranger</b></a>
+                    <p>Driving Force West Edmonton 2007 Ford Ranger Sport. This vehicle is located at the Driving Force. for more information on this...</p>
+                  </td>
+                  <td class="col3">
+                    <b>$11,900.00</b>
+                  </td>
+                  <td class="col4">
+                    <p>9 Minutes ago<br />
+                    Edmonton</p>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="4">Page: <%= will_paginate @advertises %></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        </div>
+        </div>
+        </div>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/assets/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/template.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  <!--[if IE 7]>
+  <link href="css/ie7.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  
+</head>
+<body>
+  <div class="container">
+    <div class="top" style="min-height:1550px;">
+      <div class="content">
+        <div class="signin_reg">
+          <div class="padding">
+            <a class="signin" href="#">Sign in</a> <a href="#">Register</a>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="padding">
+            <ul>
+              <li class="active"><a href="#"><%= link_to "Browse Ads", root_url %></a></li><li><a href="#"><span>Post Ad</span></a></li><li><a href="#"><span>My Profile</span></a></li><li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <div class="padding">
+            <form action="" method="post">
+              <div class="input" style="margin-left: 175px;">
+                <input type="text" name="search" value="" />
+              </div>
+              <div class="search_ads" style="display: inline;"><a href="#">Search Ads</a><div class="dropdown"><a href="#">All Ads</a><br /><a href="#">Buy and sell</a><br /><a href="#">Cars & Vehicles</a><br /><a href="#">Services</a><br /><a href="#">Housing</a><br /><a href="#">Community</a><br /><a href="#">Pets</a><br /><a href="#">Jobs</a><br /><a href="#">Resumes</a><br /><a href="#">Personals</a></div></div>
+            </form>
+          </div>
+        </div>
+        <div class="change_location">
+          <div class="padding">
+            <form action="" method="post">
+              <span style="color: #bf1e2e; font-weight: bold;">Edmonton and Area:</span>
+              <a class="change_location_link" href="#">Change Location</a>
+              <div class="dropdown"><a href="#">Edmonton</a><br /><a href="#">Calgary</a><br /><a href="#">etc.</a></div>
+            </form>
+          </div>
+        </div>
+        <hr style="margin-top: 243px;" >
+        <div class="padding">
+          <div class="big_gray_box">
+         <span style="font-weight:bold;">Please, select a category</span>
+         <br >
+         You are about to post an Ad in the Edmonton area
+          </div>
+          <div class="big_gray_box" style="top:330px;">
+            <table class="areas">
+              <tr>
+                <td rowspan="2"><% category_first = Category.where(:name=> 'Cars, Vans & Moterbikes').first %>
+                  <h3 class="title"><a href="#"><%= category_first.name %>(18,072)</a></h3>
+                  <div class="item_list">
+                    <% category_first.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#">Cars &amp; trucks</a><br />
+                    <a href="#">Car parts &amp; Accessories</a><br />
+                    <a href="#">Motorcycles(Okada)</a><br />
+                    <a href="#">Motorbike parts &amp; Accessories</a><br />
+                    <a href="#">Vans, SUVs, Trailers &amp; Plant</a><br />
+                    <a href="#">Automotive Services</a><br />
+                    <a href="#">Auto parts &amp; Tires</a><br />
+                    <a href="#">Others</a> -->
+                  </div><% category_second = Category.where(:name=> 'For Sale').first %>
+                  <h3 class="title"><a href="#"><%= category_second.name %>(13,072)</a></h3>
+                  <div class="item_list">
+                    <% category_second.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#">Accessories</a><br />
+                    <a href="#">Baby items &amp; kids' stuff</a><br />
+                    <a href="#">Books</a><br />
+                    <a href="#">Business Services</a><br />
+                    <a href="#">CDs, DVDs, Blu-ray &amp; Games</a><br />
+                    <a href="#">Clothes, Footwear</a><br />
+                    <a href="#">Computers, Cameras, Camcorders</a><br />
+                    <a href="#">Computer parts, PC Tablets</a><br />
+                    <a href="#">Electronics, Furniture, TVs</a><br />
+                    <a href="#">Home, Health, Garden, &amp; Craft</a><br />
+                    <a href="#">Music &amp; Instruments</a><br />
+                    <a href="#">Jewellery, watches</a><br />
+                    <a href="#">Office Furniture &amp; Equipment</a><br />
+                    <a href="#">Phones, Mobile phones, PDAs</a><br />
+                    <a href="#">Ipods &amp; Telecoms</a><br />
+                    <a href="#">Sports, Leisure &amp; Travel</a><br />
+                    <a href="#">Stereos &amp; Audio</a><br />
+                    <a href="#">phones, PDAs, ipods</a><br />
+                    <a href="#">sports, bikes</a><br />
+                    <a href="#">Tickets</a><br />
+                    <a href="#">Tools, Equipment</a><br />
+                    <a href="#">Toys, Video games, Consoles</a><br />
+                    <a href="#">Pets, Pet Services, Dogs</a> -->
+                  </div><% category_third = Category.where(:name=> 'Services').first %>
+                  <h3 class="title"><a href="#"><%= category_third.name %>(18, 072)</a></h3>
+                  <div class="item_list">
+                    <% category_third.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#">Automotive Services, Car </a><br />
+                    <a href="#">Hiring, Taxi services</a><br />
+                    <a href="#">Building, Home &amp; Removals</a><br />
+                    <a href="#">Childcare, Nanny</a><br />
+                    <a href="#">Cleaners &amp; Painters</a><br />
+                    <a href="#">Clearing &amp; Forwarding</a><br />
+                    <a href="#">Entertainment</a><br />
+                    <a href="#">Property &amp; Shipping</a><br />
+                    <a href="#">Health &amp; Beauty</a><br />
+                    <a href="#">Mechanic, financial, Legal</a><br />
+                    <a href="#">Moving, Storage</a><br />
+                    <a href="#">Skilled trades</a><br />
+                    <a href="#">Tax, Brokers, Money &amp; Visas</a><br />
+                    <a href="#">Travel Services &amp; Tours</a><br />
+                    <a href="#">Telecoms &amp; Computers</a><br />
+                    <a href="#">Photography, video, tutors</a><br />
+                    <a href="#">Wedding</a><br />
+                    <a href="#">other</a> -->
+                  </div>
+                </td>
+                <td colspan="2"><% category_forth = Category.where(:name=> 'Flats & Houses').first %>
+                  <h3 class="title"><a href="#"><%=category_forth.name %>(13,072)</a></h3>
+                  <div class="item_list">
+                    <table style="margin:0px 0px 0px 0px;padding:0px 0px 0px 0px;">
+                       <tr>
+                        <td style="margin:0px 0px 0px 0px;padding:0px 185px 0px 0px;">
+                          <% category_forth.subcategories.each do |sub_category| %>
+                           <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                          <% end %>
+                        <!-- <a href="#" style="font-weight:bolder;"><strong>For Rent (3,212)</strong></a><br />
+                        <a href="#">Offered</a><br />
+                        <a href="#">Wanted</a><br />
+                        <a href="#">Office Space</a><br />
+                        <a href="#">Warehouse</a><br />
+                        <a href="#">Parking, Storage &amp; Garage</a><br /> -->
+                      </td>
+                      <td>
+                        <a href="#" style="font-weight:bolder;">For Sale (3,212)</a><br />
+                        <a href="#">By Owner</a><br />
+                        <a href="#">By Estate Agent</a><br>
+                        <br>
+                        <a href="#" style="font-weight:bolder;">To Share (8,146)</a><br />
+                        <a href="#">Offered</a><br />
+                        <a href="#">Wanted</a>
+                        </td>
+                       </tr>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                 <td><% category_fifth = Category.where(:name=> 'Jobs').first %>
+                  <h3 class="title"><a href="#"><%= category_fifth.name %></a></h3>
+                  <div class="item_list">
+                    <% category_fifth.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#">Accounting</a><br />
+                    <a href="#">Babysitting &amp; Nannies</a><br />
+                    <a href="#">Banking &amp; Insurance</a><br />
+                    <a href="#">Bar, Food, Hospitality</a><br />
+                    <a href="#">Chefs, Cooks &amp; Kitchen</a><br />
+                    <a href="#">Computing, Programmers, Web design &amp; IT</a><br />
+                    <a href="#">Construction, Trade</a><br />
+                    <a href="#">Data Entry &amp; Junior Admin</a><br />
+                    <a href="#">Dentists, Doctors, Dental hygiene</a><br >
+                    <a href="#">Drivers &amp; Warehouse</a><br >
+                    <a href="#">Engineering &amp; Technologist</a><br >
+                    <a href="#">Fashion, hair stylist, salon</a><br >
+                    <a href="#">Landscaping</a><br >
+                    <a href="#">Management</a><br >
+                    <a href="#">Health &amp; Beauty</a><br >
+                    <a href="#">Healthcare</a><br >
+                    <a href="#">Hotel</a><br >
+                    <a href="#">Housekeeping &amp; Cleaning</a><br >
+                    <a href="#">Marketing, Advertising &amp; PR</a><br >
+                    <a href="#">Media, Design &amp; Creative</a><br >
+                    <a href="#">Nursing, Homecare</a><br >
+                    <a href="#">Paralegal &amp; Legal</a><br >
+                    <a href="#">Receptionist &amp; office management</a><br >
+                    <a href="#">Recruitment consultants</a><br >
+                    <a href="#">Sales, Retail &amp; Customer service</a><br >
+                    <a href="#">Secretarial, Pas &amp; Admin</a><br >
+                    <a href="#">Security</a><br >
+                    <a href="#">Student &amp; Graduate</a><br >
+                    <a href="#">Travel &amp; Overseas</a><br >
+                    <a href="#">Teaching &amp; Nursery</a><br >
+                    <a href="#">Training Courses &amp; Open days</a><br >
+                    <a href="#">Waiting &amp; Restaurant</a> -->
+                  </div>
+                </td>
+                <td><% category_six = Category.where(:name=> 'Community').first %>
+                  <h3 class="title"><a href="#"><%= category_six.name %>(18,072)</a></h3>
+                  <div class="item_list">
+                    <% category_six.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#">Artists &amp; Theatres</a><br />
+                    <a href="#">Babysitting</a><br />
+                    <a href="#">Classes</a><br />
+                    <a href="#">Creative Writing</a><br />
+                    <a href="#">Events, Gigs &amp; Nightlife</a><br />
+                    <a href="#">Music, Bands, Musicians &amp; DJs</a><br />
+                    <a href="#">Fitness, Dance &amp; Health</a><br />
+                    <a href="#">Groups &amp; Associations</a><br />
+                    <a href="#">Lost &amp; Found Stuff</a><br />
+                    <a href="#">Sports Teams &amp; Partners</a><br />
+                    <a href="#">Wedding Management</a><br >
+                    <a href="#">Burial</a><br >
+                    <a href="#">Other</a> -->
+                  </div><% category_seven = Category.where(:name=> 'Schools/Colleges').first %>
+                  <h3 class="title"><a href="#"><%= category_seven.name %>(13,072)</a></h3>
+                  <div class="item_list">
+                    <% category_seven.subcategories.each do |sub_category| %>
+                      <%= link_to sub_category.name, advertisement_detail_path(id:sub_category.id) %><br/>
+                    <% end %>
+                    <!-- <a href="#" style="font-weight:bolder;">Universities / University Colleges (3,212)</a><br />
+                    <a href="#">Study Abroad programs</a><br />
+                    <a href="#">Summer School programs</a><br />
+                    <a href="#">Distance Learning Education</a><br />
+                    <a href="#">Colleges, Diploma Programs</a><br />
+                    <a href="#">Language Institutions / Arts Schools</a> -->
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="content">
+        <div class="padding">
+          <ul class="footer_menu">
+            <li class="active"><a href="#"><span>Help</span></a></li>
+            <li><a href="#"><span>About</span></a></li>
+            <li><a href="#"><span>Privacy Policy</span></a></li>
+            <li><a href="#"><span>Terms of Use</span></a></li>
+            <li><a class="facebook_link" href="#"><span>Follow us on Facebook</span></a></li>
+            <li><a class="twitter_link" href="#"><span>Follow us on Twitter</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; 2011 Kutangaza</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
