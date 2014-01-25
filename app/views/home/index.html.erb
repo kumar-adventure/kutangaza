@@ -198,7 +198,7 @@
                           <% end %>
                           <!-- <a href="#">By Owner</a><br />
                           <a href="#">By Estate Agent</a><br> -->
-                          <br><% category_nine = Category.where(:name=> 'To Share').first %>
+                          <br><% category_nine = Category.where(:name=> 'Flats To Share').first %>
                           <a href="#" style="font-weight:bolder;">To Share(8,146)</a><br />
                           <% category_nine.subcategories.each do |sub_category| %>
                            <%= link_to sub_category.name, category_path(sub_category) %><br/>
