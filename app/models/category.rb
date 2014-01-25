@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
 
 	CATEGORY = ["Cars, Vans & Moterbikes","For Sale", "Services", "Flats & Houses", "Community", "Jobs", "Schools/Colleges"]
 
-	FLATS_CATEGORY = ["Fale Sale", "To Share"]
+	FLATS_CATEGORY = ["For Sale", "To Share"]
 
 	def self.insert_category
 		CATEGORY.each do |category|
@@ -14,14 +14,11 @@ class Category < ActiveRecord::Base
 		end
 	end
 
-=begin
-def self.insert_flats_category
+	def self.insert_flats_category
 		FLATS_CATEGORY.each do |category|
 			Category.create(name: category)
 		end
 	end
-=end
-
 
 	def self.create_sub_category
 		category_first = Category.where(:name=> 'Cars, Vans & Moterbikes').first
@@ -58,7 +55,15 @@ def self.insert_flats_category
     Subcategory::SCHOOL_COLLAGE_SUB_CATEGORY.each do |sub_category|
 		  category_seven.subcategories.create(name: sub_category)
 		end
+		category_eight = Category.where(:name=> 'For Sale').first
+    Subcategory::FOR_SALE_SUB_CATEGORY.each do |sub_category|
+		  category_eight.subcategories.create(name: sub_category)
+		end
 
+		category_nine = Category.where(:name=> 'To Share').first
+    Subcategory::TO_SHARE_SUB_CATEGORY.each do |sub_category|
+		  category_nine.subcategories.create(name: sub_category)
+		end
 	end
 	 
 end
