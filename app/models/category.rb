@@ -6,11 +6,22 @@ class Category < ActiveRecord::Base
 
 	CATEGORY = ["Cars, Vans & Moterbikes","For Sale", "Services", "Flats & Houses", "Community", "Jobs", "Schools/Colleges"]
 
+	FLATS_CATEGORY = ["Fale Sale", "To Share"]
+
 	def self.insert_category
 		CATEGORY.each do |category|
-			self.crceate(name: category)
+			Category.create(name: category)
 		end
 	end
+
+=begin
+def self.insert_flats_category
+		FLATS_CATEGORY.each do |category|
+			Category.create(name: category)
+		end
+	end
+=end
+
 
 	def self.create_sub_category
 		category_first = Category.where(:name=> 'Cars, Vans & Moterbikes').first
