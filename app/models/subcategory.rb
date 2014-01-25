@@ -53,6 +53,6 @@ class Subcategory < ActiveRecord::Base
                                   "Colleges, Diploma Programs", "Language Institutions / Arts Schools"
                                 ]
  
-  FOR_SALE_SUB_CATEGORY = ["By Owner", "By Estate Agent"]
-  TO_SHARE_SUB_CATEGORY = ["Offered", "Wanted"]
+  FOR_SALE_FLATS_SUB_CATEGORY = ["By Owner", "By Estate Agent"]
+  TO_SHARE_FLATS_SUB_CATEGORY = ["Offered", "Wanted"]
 end

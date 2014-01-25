@@ -56,12 +56,12 @@ class Category < ActiveRecord::Base
 		  category_seven.subcategories.create(name: sub_category)
 		end
 		category_eight = Category.where(:name=> 'For Sale').first
-    Subcategory::FOR_SALE_SUB_CATEGORY.each do |sub_category|
+    Subcategory::FOR_SALE_FLATS_SUB_CATEGORY.each do |sub_category|
 		  category_eight.subcategories.create(name: sub_category)
 		end
 
 		category_nine = Category.where(:name=> 'To Share').first
-    Subcategory::TO_SHARE_SUB_CATEGORY.each do |sub_category|
+    Subcategory::TO_SHARE_FLATS_SUB_CATEGORY.each do |sub_category|
 		  category_nine.subcategories.create(name: sub_category)
 		end
 	end
