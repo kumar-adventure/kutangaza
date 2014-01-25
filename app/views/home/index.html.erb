@@ -191,7 +191,7 @@
                           <a href="#">Warehouse</a><br />
                           <a href="#">Parking, Storage &amp; Garage</a><br /> -->
                         </td>
-                        <td><% category_eight = Category.where(:name=> 'For Sale').first %>
+                        <td><% category_eight = Category.where(:name=> 'Flats For Sale').first %>
                           <a href="#" style="font-weight:bolder;"><%=category_eight.name %> (3,212)</a><br />
                           <% category_eight.subcategories.each do |sub_category| %>
                            <%= link_to sub_category.name, category_path(sub_category) %><br/>
@@ -199,7 +199,7 @@
                           <!-- <a href="#">By Owner</a><br />
                           <a href="#">By Estate Agent</a><br> -->
                           <br><% category_nine = Category.where(:name=> 'To Share').first %>
-                          <a href="#" style="font-weight:bolder;"><%=category_nine.name %>(8,146)</a><br />
+                          <a href="#" style="font-weight:bolder;">To Share(8,146)</a><br />
                           <% category_nine.subcategories.each do |sub_category| %>
                            <%= link_to sub_category.name, category_path(sub_category) %><br/>
                           <% end %>

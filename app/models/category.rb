@@ -6,7 +6,7 @@ class Category < ActiveRecord::Base
 
 	CATEGORY = ["Cars, Vans & Moterbikes","For Sale", "Services", "Flats & Houses", "Community", "Jobs", "Schools/Colleges"]
 
-	FLATS_CATEGORY = ["For Sale", "To Share"]
+	FLATS_CATEGORY = ["Flats For Sale", "To Share"]
 
 	def self.insert_category
 		CATEGORY.each do |category|

@@ -12,7 +12,10 @@ task :insert_flats_category => :environment do
   Category.insert_flats_category
 end
 
+task :destroy_all_category => :environment do
+  Category.destroy_all
+end
+
 task :destroy_all_sub_category => :environment do
-	puts "====== Loading all Sub Category  ======"
   Subcategory.destroy_all
 end
