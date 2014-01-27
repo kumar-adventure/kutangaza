@@ -1,6 +1,6 @@
 <div class="signin_reg">
   <div class="padding">
-    <% if current_user %>
+    <% if user_signed_in? %>
       <%= link_to "Hello #{current_user.name}", root_url %>
       <%= link_to "Sign out", destroy_user_session_path , method: :delete %>
     <% else %>
