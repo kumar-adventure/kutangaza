@@ -13,8 +13,8 @@
         <div class="signin_reg">
           <div class="padding">
             <% if user_signed_in? %>
-              <%= link_to "Hello #{current_user.name}", root_url %>
-              <%= link_to "Sign out", destroy_user_session_path %>
+              <%= link_to "Welcome #{current_user.email}", root_url %>
+              <%= link_to "Logout", destroy_user_session_path %>
             <% else %>
               <a class="signin" href="<%= new_user_session_path %>">Sign in</a>
               <a href="<%= new_user_registration_path %>">Register</a>
@@ -47,7 +47,18 @@
             </form>
           </div>
         </div>
+
         <hr style="margin-top: 243px;" />
+        <% if flash[:notice] %>
+          <div class="alert-message warning" style="text-align: center; color: #008000; font-weight: bold">
+           <p><%= flash[:notice] %></p>
+          </div>
+        <% end %>
+        <% if flash[:error] %>
+          <div class="alert-message error" style="text-align: center; color: #FF0000; font-weight: bold">
+           <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
         <div class="padding">
           <div class="left_column">
             <h2 class="page_title"><u><%= link_to "Post an Advertisement", post_advertisement_path %></u> <b>-</b> <span>We Drive Your Ads!</span></h2>

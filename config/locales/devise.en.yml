@@ -18,9 +18,9 @@ en:
       unconfirmed: "You have to confirm your account before continuing."
     mailer:
       confirmation_instructions:
-        subject: "Confirmation instructions"
+        subject: "Cowriescall Account Details"
       reset_password_instructions:
-        subject: "Reset password instructions"
+        subject: "Change your kutangaza password"
       unlock_instructions:
         subject: "Unlock Instructions"
     omniauth_callbacks:

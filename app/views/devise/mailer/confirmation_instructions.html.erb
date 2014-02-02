@@ -1,5 +1,17 @@
-<p>Welcome <%= @email %>!</p>
+<!-- <p>Welcome <%= @email %>!</p>
 
 <p>You can confirm your account email through the link below:</p>
 
 <p><%= link_to 'Confirm my account', confirmation_url(@resource, :confirmation_token => @token) %></p>
+ -->
+<p>Dear <%= @name %>!</p>
+</p>your Cowriescall registration details are:	</p>
+<p>username : <%= @email %></p>
+<p>password : <%= @password %></p>	
+<p>Click <%= link_to 'HERE', confirmation_url(@resource, :confirmation_token => @token) %> to verify your account.</p>
+	
+<p>
+	Kind Regards,<br>	
+	Kutanagaza Inc<br>	
+	<a href="http://www.kutangaza.com">www.kutangaza.com</a> 
+</P>
