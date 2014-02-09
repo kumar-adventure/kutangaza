@@ -10,10 +10,10 @@
   <div class="container">
     <div class="top">
       <div class="content">
-        <div class="signin_reg">
+        <div class="signin_reg" style="margin-left: 675px; margin-top: 68px;">
           <div class="padding">
             <% if user_signed_in? %>
-              <%= link_to "Welcome #{current_user.email}", root_url %>
+              <%= link_to "Welcome! #{current_user.name}", root_url %>
               <%= link_to "Logout", destroy_user_session_path %>
             <% else %>
               <a class="signin" href="<%= new_user_session_path %>">Sign in</a>

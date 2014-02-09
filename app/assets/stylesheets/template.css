@@ -63,14 +63,11 @@ body {
 -------------------------------------------------------------------------*/
 
 .top .content .signin_reg {
-  width: 210px;
-  height: 58px;
+  width: auto;
+  height: 40px;
   text-align: center;
-  background: url('/assets/signup.png') left top no-repeat;
-  position: absolute;
-  top: 55px;
-  right: 105px;
-}
+  background-color: #fff
+  }
 .top .content .signin_reg .padding {
   padding: 4px 20px 4px 30px;
 }

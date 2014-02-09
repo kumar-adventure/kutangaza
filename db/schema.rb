@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140101043415) do
+ActiveRecord::Schema.define(version: 20140125141807) do
+
+  create_table "advertises", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.float    "price"
+    t.integer  "subcategory_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "advertises", ["subcategory_id"], name: "index_advertises_on_subcategory_id"
+  add_index "advertises", ["user_id"], name: "index_advertises_on_user_id"
+
+  create_table "categories", force: true do |t|
+    t.integer  "parent_id"
+    t.string   "parma_link"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subcategories", force: true do |t|
+    t.integer  "category_id"
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,6 +59,7 @@ ActiveRecord::Schema.define(version: 20140101043415) do
     t.string   "unconfirmed_email"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
