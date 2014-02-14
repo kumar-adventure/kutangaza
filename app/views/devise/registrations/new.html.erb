@@ -1,4 +1,30 @@
-<div class="padding" style="padding-left:45px;font-size:small;">
+<p id="notice"><%= notice %></p>
+<div style="margin-left: 184px;">
+
+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true, class: "set-password-width" %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password, class: "set-password-width" %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation , class: "set-password-width" %></div>
+  <div>Nickname<span><br>
+  <%= f.text_field :name, class: "set-password-width" %> 
+  <div>
+  <div>Location<span><br>
+  <%= f.text_field :location, class: "set-password-width" %> 
+  <div>
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+<%= render "devise/shared/links" %>
+
+<!-- <div class="padding" style="padding-left:45px;font-size:small;">
   <span style="font-weight:bold;">Registration</span>
   <br/>
   <br/>
@@ -18,9 +44,26 @@
     	<br/>
     	<span style="font-weight:bold;">Email address</span> <span style="color:red;"id="email_message"></span>
     	<br/> 
-    	<%= f.email_field :email, :autofocus => true, class: "set-password-width" %>
-    	<br/>
-    	<span style="font-weight:bold;">Password(at least 8 characters)</span> <span style="color:red;"id="password1_message"></span>
+   	<%= f.email_field :email, :autofocus => true, class: "set-password-width" %>
+   	<br/>
+   	<span style="font-weight:bold;">Password(+<h2>Sign up</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div><% end %>
++
++<%= render "devise/shared/links" %>
+at least 8 characters)</span> <span style="color:red;"id="password1_message"></span>
     	<br/>
     	<%= f.password_field :password, class: "set-password-width" %> 
     	<br/>
@@ -48,3 +91,5 @@
   <% end %>
 </div>
 
+ -->
+</div>

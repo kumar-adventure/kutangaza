@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="/assets/reset.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/template.css" rel="stylesheet" type="text/css" />
+  <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+  <!--[if IE 7]>
+  <link href="css/ie7.css" rel="stylesheet" type="text/css" />
+  <![endif]-->
+  
+</head>
+<body>
+  <div class="container">
+    <div class="top" style="min-height:600px;">
+      <div class="content">
+        <div class="signin_reg" style="margin-left: 675px; margin-top: 68px;">
+          <div class="padding">
+            <% if user_signed_in? %>
+              <%= link_to "Welcome! #{current_user.name}", root_url %>
+              <%= link_to "Logout", destroy_user_session_path %>
+            <% else %>
+              <a class="signin" href="<%= new_user_session_path %>">Sign in</a>
+              <a href="<%= new_user_registration_path %>">Register</a>
+            <% end %>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="padding">
+            <ul>
+              <li class="active"><a href="<%= root_url %>"><span>Browse Ads</span></a></li><li>
+              <a href="#">
+                <span><%= link_to "Post Ad", advertisement_detail_path %><br/></span>
+              </a>
+            </li>
+            <li>
+              <% if user_signed_in? %>
+                <a href="#">
+                  <span><%= link_to "My Profile", edit_user_registration_path %><br/></span>
+                </a>
+              <%else%>
+                <a href="#">
+                  <span>My Profile</span>
+                </a>
+              <%end%>
+            </li>
+            <li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="search">
+          <div class="padding">
+            <form action="" method="post">
+              <div class="input" style="margin-left: 175px;">
+                <input type="text" name="search" value="" />
+              </div>
+              <div class="search_ads" style="display: inline;">
+                <a href="#">Search Ads</a>
+                <div class="dropdown">
+                  <a href="#">All Ads</a><br />
+                  <a href="#">Buy and sell</a><br />
+                  <a href="#">Cars & Vehicles</a><br />
+                  <a href="#">Services</a><br />
+                  <a href="#">Housing</a><br />
+                  <a href="#">Community</a><br />
+                  <a href="#">Pets</a><br />
+                  <a href="#">Jobs</a><br />
+                  <a href="#">Resumes</a><br />
+                  <a href="#">Personals</a>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="change_location">
+          <div class="padding">
+            <div style="float: left; color: #bf1e2e; font-weight: bold;">
+              <%= link_to "Promote Ads", promote_ads_advertisements_path %>
+            </div>
+            <form action="" method="post">
+              <span style="color: #bf1e2e; font-weight: bold;">Monrovia and Area:</span>
+              <a class="change_location_link" href="#">Change Location</a>
+              <div class="dropdown">
+                <a href="#">Barclayville</a><br />
+                <a href="#">Bensonville</a><br />
+                <a href="#">Bopolu</a><br />
+                <a href="#">Buchanan</a><br />
+                <a href="#">Cesstos City</a><br />
+                <a href="#">Fish Town</a><br />
+                <a href="#">Foya</a><br />
+                <a href="#">Ganta</a><br />
+                <a href="#">Gbarnga</a><br />
+                <a href="#">Greenville</a><br />
+                <a href="#">Harbel</a><br />
+                <a href="#">Harper</a><br />
+                <a href="#">Kakata</a><br />
+                <a href="#">Karnplay</a><br />
+                <a href="#">Pleebo</a><br />
+                <a href="#">Robertsport</a><br />
+                <a href="#">Sacleapea</a><br />
+                <a href="#">Sanniquellie</a><br />
+                <a href="#">Tubmanburg</a><br />
+                <a href="#">Voinjama</a><br />
+                <a href="#">Zorzor</a><br />
+                <a href="#">Zwedru</a><br />
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <hr style="margin-top: 160px;" >
+        
+        <div class="profileBar">
+        		<ul>
+              <li><a href="#"><span>My Ads</span></a></li>
+              <li class="longProfileButton"><a href="#"><span>Manage account</span></a></li>
+              <li class="active"><a href="#"><span>Promote Ads</span></a></li>
+              <li><a href="#"><span>My Orders</span></a></li>
+            </ul>
+        </div>
+        
+        <div class="padding">
+          <div class="big_gray_box">
+          	<div class="ad_details_header">
+          		Promote Ads
+          	</div>
+          	<br >
+          	<table>
+          		<tr>
+          			<td style="width:50%;vertical-align:top;border-right:thin gray solid;padding-right:20px">
+          				<br >
+          				<span style="font-weight:bold;">Home Ad</span>
+          				<br>
+          				<br >
+          				<span class="grayInfo">Do you know you can reach more people by building your own web page on Kutangaza Home Ad.</span>
+          				<br >
+          				<a href="#">Learn more</a>
+          			</td>
+          			<td style="width:50%;vertical-align:top;padding-left:20px;">
+          				<br >
+          				<span style="font-weight:bold;">Top Ads</span>
+          				<br>
+          				<br >
+          				<span class="grayInfo">Reach more people by having your Ad in the top section of its category.</span>
+          				<br >
+          				<a href="#">Learn more</a>
+          			</td>
+          		</tr>
+          	</table>
+          </div>
+          <div class="big_gray_box" style="top:480px;">
+          	Promote Ads helps you easily expose your Ads to more people, getting you more response.
+           	<br >
+          	<br >
+          	Get started now by posting an Ad.
+          	<br >
+          	<br >
+          	<a href="postAdCategory.html" style="text-decoration:none;">
+					<span class="button">Post Ad</span>
+				</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="content">
+        <div class="padding">
+          <ul class="footer_menu">
+            <li class="active"><a href="#"><span>Help</span></a></li>
+            <li><a href="#"><span>About</span></a></li>
+            <li><a href="#"><span>Privacy Policy</span></a></li>
+            <li><a href="#"><span>Terms of Use</span></a></li>
+            <li><a class="facebook_link" href="#"><span>Follow us on Facebook</span></a></li>
+            <li><a class="twitter_link" href="#"><span>Follow us on Twitter</span></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>Copyright &copy; 2011 Kutangaza</p>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>

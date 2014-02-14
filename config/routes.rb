@@ -7,10 +7,18 @@ Kutangaza::Application.routes.draw do
   get 'post_advertisement', to: 'categories#post_advertisement', as: 'post_advertisement'
   get 'advertisement_detail', to: 'categories#advertisement_detail', as: 'advertisement_detail'
   
-  devise_for :users
+  #devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  resources :advertisements do
+    collection do
+      get :promote_ads
+    end
+  end
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   # You can have the root of your site routed with "root"
   root 'home#index'
 
