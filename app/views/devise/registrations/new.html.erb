@@ -1,6 +1,57 @@
-<p id="notice"><%= notice %></p>
+<div class="signin_reg" style="margin-left: 675px; margin-top: 68px;">
+  <div class="padding">
+    <% if user_signed_in? %>
+      <%= link_to "Hello #{current_user.name}", root_url %>
+      <%= link_to "Logout", destroy_user_session_path %>
+    <% else %>
+      <a class="signin" href="<%= new_user_session_path %>">Sign in</a>
+      <a href="<%= new_user_registration_path %>">Register</a>
+    <% end %>
+  </div>
+</div>
+<div class="menu">
+  <div class="padding">
+    <ul>
+      <li class="active">
+        <a href="<%= root_url %>"><span>Browse Ads</span></a>
+      </li>
+      <li>
+        <a href="#">
+          <span><%= link_to "Post Ad", advertisement_detail_path %><br/></span>
+        </a>
+      </li>
+      <% if user_signed_in? %>
+        <li>
+          <a href="#">
+            <span><%= link_to "My Profile", edit_user_registration_path %><br/></span>
+          </a>
+        </li>
+      <%end%>
+      <li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="search">
+  <div class="padding">
+    <form action="" method="post">
+      <div class="input" style="margin-left: 175px !important;">
+        <input type="text" name="search" value="" />
+      </div>
+      <div class="search_ads" style="display: inline;"><a href="#">Search Ads</a><div class="dropdown"><a href="#">All Ads</a><br /><a href="#">Buy and sell</a><br /><a href="#">Cars & Vehicles</a><br /><a href="#">Services</a><br /><a href="#">Housing</a><br /><a href="#">Community</a><br /><a href="#">Pets</a><br /><a href="#">Jobs</a><br /><a href="#">Resumes</a><br /><a href="#">Personals</a></div></div>
+    </form>
+  </div>
+</div>
+<div class="change_location">
+  <div class="padding">
+    <form action="" method="post">
+      <span style="color: #bf1e2e; font-weight: bold;">Edmonton and Area:</span>
+      <a class="change_location_link" href="#">Change Location</a>
+      <div class="dropdown"><a href="#">Edmonton</a><br /><a href="#">Calgary</a><br /><a href="#">etc.</a></div>
+    </form>
+  </div>
+</div>
+<hr style="margin-top: 160px;" >
 <div style="margin-left: 184px;">
-
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -16,80 +67,13 @@
   <%= f.password_field :password_confirmation , class: "set-password-width" %></div>
   <div>Nickname<span><br>
   <%= f.text_field :name, class: "set-password-width" %> 
-  <div>
+  </div>
   <div>Location<span><br>
   <%= f.text_field :location, class: "set-password-width" %> 
-  <div>
-  <div><%= f.submit "Sign up" %></div>
+  </div><br>
+  <div><%= f.submit "Register" %></div>
+  <div></div>
 <% end %>
+
 <%= render "devise/shared/links" %>
-
-<!-- <div class="padding" style="padding-left:45px;font-size:small;">
-  <span style="font-weight:bold;">Registration</span>
-  <br/>
-  <br/>
-  Registration is optional, but registration does allow you to:
-  <br/>
-  <ul style="list-style-type:disc;list-style-position:inside;">
-  	<li>Post and manage Ads without having to confirm each action via email</li>
-  	<li>Reserve your own nickname</li>
-  	<li>Participate in discussions</li>
-  </ul>
-  <br/>
-  
-  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>	
-    <%= devise_error_messages! %>
-    <div class="gray_box" style="left:150px;width:860px;">
-    	To start registration please enter your email address below.
-    	<br/>
-    	<span style="font-weight:bold;">Email address</span> <span style="color:red;"id="email_message"></span>
-    	<br/> 
-   	<%= f.email_field :email, :autofocus => true, class: "set-password-width" %>
-   	<br/>
-   	<span style="font-weight:bold;">Password(+<h2>Sign up</h2>
-
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
-
-  <div><%= f.label :password %><br />
-  <%= f.password_field :password %></div>
-
-  <div><%= f.label :password_confirmation %><br />
-  <%= f.password_field :password_confirmation %></div>
-
-  <div><%= f.submit "Sign up" %></div><% end %>
-+
-+<%= render "devise/shared/links" %>
-at least 8 characters)</span> <span style="color:red;"id="password1_message"></span>
-    	<br/>
-    	<%= f.password_field :password, class: "set-password-width" %> 
-    	<br/>
-    	<span style="font-weight:bold;">Re-type password</span> <span style="color:red;"id="password2_message"></span>
-    	<br/>
-    	<%= f.password_field :password_confirmation, class: "set-password-width" %> 
-    	<br/>
-    	<span style="font-weight:bold;">Nickname</span>
-    	<br/>
-    	<%= f.text_field :name, class: "set-password-width" %> 
-    	<span style="color:red;"id="nickname_message"></span>
-    	<br/>
-    	<input type="checkbox" name="event_contact" id="event_contact"> Yes, I would like Kutangaza to contact me about events,
-    	new features, and other promotional information.
-    	<br/>
-    	<input type="checkbox" name="terms_agreement" id="terms_agreement"> By clicking "Register", you are agreeing to our 
-    	<a href=# style="color:#0066CC;text-decoration:underline;">terms of use</a> and 
-    	<a href=# style="color:#0066CC;text-decoration:underline;">privacy policy</a>.
-    	<br/>
-    	<br/>
-    	<%= f.submit "Register", style: "color:black;background-color:#CDC953;border:thin blue solid;padding:2px 15px 2px 15px;" %>
-    	<br/>
-      <%#= render "devise/shared/links" %>
-    </div>
-  <% end %>
-</div>
-
- -->
 </div>

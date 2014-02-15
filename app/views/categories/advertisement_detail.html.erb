@@ -27,28 +27,18 @@
         <div class="menu" style="width: 645px; !important">
           <div class="padding">
             <ul>
-              <li class="active">
-                <a href="<%= root_url %>">
-                  <span>Browse Ads</span>
-                </a>
-              </li>
+              <li class="active"><a href="<%= root_url %>"><span>Browse Ads</span></a></li><li>
+              <a href="#">
+                <span><%= link_to "Post Ad", advertisement_detail_path %><br/></span>
+              </a>
+            </li>
+            <% if user_signed_in? %>
               <li>
                 <a href="#">
-                  <span><%= link_to "Post Ad", advertisement_detail_path %><br/></span>
+                  <span><%= link_to "My Profile", edit_user_registration_path %><br/></span>
                 </a>
               </li>
-              <li>
-                <% if user_signed_in? %>
-                  <a href="#">
-                    <span><%= link_to "My Profile", edit_user_registration_path %><br/></span>
-                  </a>
-                <%else%>
-                  <a href="#">
-                    <span>My Profile</span>
-                  </a>
-                <%end%>
-              </li>
-              <li>
+            <%end%>              <li>
                 <a href="#">
                   <span>Discussion</span>
                 </a>

@@ -1,6 +1,55 @@
+<div class="signin_reg" style="margin-left: 675px; margin-top: 68px;">
+  <div class="padding">
+    <% if user_signed_in? %>
+      <%= link_to "Hello #{current_user.name}", root_url %>
+      <%= link_to "Sign out", destroy_user_session_path , method: :delete %>
+    <% else %>
+      <a class="signin" href="<%= new_user_session_path %>">Sign in</a>
+      <a href="<%= new_user_registration_path %>">Register</a>
+    <% end %>
+  </div>
+</div>
+<div class="menu">
+  <div class="padding">
+    <ul>
+      <li class="active"><a href="<%= root_url %>"><span>Browse Ads</span></a></li><li><a href="#"><span>Post Ad</span></a></li><li><a href="#"><span>My Profile</span></a></li><li><a href="#"><span>Discussion</span></a></li><li><a href="#"><span>FAQ's</span></a></li><li><a href="#"><span>Deals</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="search">
+  <div class="padding">
+    <form action="" method="post">
+      <div class="input" style="margin-left: 175px !important;">
+        <input type="text" name="search" value="" />
+      </div>
+      <div class="search_ads" style="display: inline;"><a href="#">Search Ads</a><div class="dropdown"><a href="#">All Ads</a><br /><a href="#">Buy and sell</a><br /><a href="#">Cars & Vehicles</a><br /><a href="#">Services</a><br /><a href="#">Housing</a><br /><a href="#">Community</a><br /><a href="#">Pets</a><br /><a href="#">Jobs</a><br /><a href="#">Resumes</a><br /><a href="#">Personals</a></div></div>
+    </form>
+  </div>
+</div>
+<div class="change_location">
+  <div class="padding">
+    <form action="" method="post">
+      <span style="color: #bf1e2e; font-weight: bold;">Edmonton and Area:</span>
+      <a class="change_location_link" href="#">Change Location</a>
+      <div class="dropdown"><a href="#">Edmonton</a><br /><a href="#">Calgary</a><br /><a href="#">etc.</a></div>
+    </form>
+  </div>
+</div>
+<hr style="margin-top: 160px;" >
+
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div class="padding">
     <div class="gray_box">
+              <% if flash[:notice] %>
+          <div class="alert-message warning" style="text-align: center; color: #008000; font-weight: bold">
+           <p><%= flash[:notice] %></p>
+          </div>
+        <% end %>
+        <% if flash[:error] %>
+          <div class="alert-message error" style="text-align: center; color: #FF0000; font-weight: bold">
+           <p><%= flash[:error] %></p>
+          </div>
+        <% end %>
     	<span style="font-weight:bold;font-size:x-small;">Sign in</span>
     	<br/>
     	<span style="font-weight:bold;font-size:x-small;">Email address or nickname</span>
