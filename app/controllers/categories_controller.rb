@@ -69,7 +69,7 @@ class CategoriesController < ApplicationController
   end
 
   def advertisement_detail
-    render layout: false
+    
   end
 =begin
 private

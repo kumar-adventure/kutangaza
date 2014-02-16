@@ -3,6 +3,7 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
 
   has_many :subcategories
+  belongs_to :advertisement
 
 	CATEGORY = ["Cars, Vans & Moterbikes","For Sale", "Services", "Flats & Houses", "Community", "Jobs", "Schools/Colleges"]
 
